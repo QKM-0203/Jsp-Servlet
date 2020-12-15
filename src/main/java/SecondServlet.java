@@ -14,7 +14,7 @@ public class SecondServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          //通用的获取请求参数的
          //这些方法在post里面是中文会出现乱码的，但是get不会出现，所以如果使用post获取参数的话，就必须设置一个东西如下
-        //request.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         //根据参数获取参数值
         System.out.println(request.getParameter("username"));
 
@@ -26,6 +26,7 @@ public class SecondServlet extends HttpServlet {
         Map<String, String[]> parameterMap = request.getParameterMap();
       //以上通用的，可以在post里面用也可可以在get里面用
 
+        /*
         //获取请求体--请求参数(post方式)
         //字符操作
         BufferedReader reader = request.getReader();
@@ -36,13 +37,18 @@ public class SecondServlet extends HttpServlet {
         //字节和字符都可以
         ServletInputStream inputStream = request.getInputStream();
 
+         */
+
 
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        //显示的是中文
          System.out.println(request.getParameter("username"));
 
 
+
         //获取请求参数（get方式）注意和post获取方式不一样哈
+        //还是浏览器的解析方式
         String queryString = request.getQueryString();
         System.out.println(queryString);
         //获取请求方式

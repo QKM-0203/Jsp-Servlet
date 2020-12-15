@@ -11,13 +11,21 @@
     <div>密码 <input type="text" name="password"></div>
     <div><button type="submit">登录</button></div>
     <a href="/WebServlet15_war_exploded/SecondServlet">demo2</a>
-    -->
-<form action="/WebServlet15_war_exploded/SecondServlet" method="post">
+
+<form action="/WebServlet15_war_exploded/SecondServlet" method="get">
     <input type="text" placeholder="请输入用户名" name="username"><br>
     <input type="text" placeholder="请输入密码" name="password"><br>
     <input type="checkbox" name="contribute" value="game">游戏<br>
     <input type="checkbox" name="contribute" value="study">学习<br>
     <input type="submit" value = "注册">
+</form>
+-->
+<!--
+可以选择上传的文件
+-->
+<form action="/WebServlet15_war_exploded/FiveServlet" method="post" enctype="multipart/form-data">
+    <input type="file" name = "filename" value = ""/><br>
+    <input type = "submit" value="upload" name = "butter">
 </form>
 </body>
 <html>

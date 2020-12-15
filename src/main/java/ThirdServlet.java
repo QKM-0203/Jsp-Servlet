@@ -26,6 +26,7 @@ public class ThirdServlet extends HttpServlet {
           System.out.println("3");
           //设置共享的资源，相当于键值对。
           request.setAttribute("戚凯萌",18);
+          //Dispatcher调度员的意思
           request.getRequestDispatcher("/FourServlet").forward(request,response);
           //在这里面设置，在4里面访问
 
