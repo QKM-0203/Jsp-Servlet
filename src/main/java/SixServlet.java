@@ -20,7 +20,7 @@ public class SixServlet extends HttpServlet {
          */
         //路径的要求给客户端用加虚拟目录就是工程名称，但是给服务器用不用加虚拟目录
         //转发为服务器端的要求，重新定向为服务器端的要求，所以重新定向要写虚拟目录
-        //可以用contextPath(方法获取虚拟目录
+        //可以用contextPath(方法获取虚拟目录)
         //获取流之前设置响应编码形式，设置为浏览器的解码形式，但是你得知道浏览器的解码形势
         //有一个很好的方法就是我直接告诉浏览器，然后浏览器用我传的进行解析response.setContentType("Text/html;charset=utf-8")
         response.sendRedirect("https://www.bilibili.com/video/BV14D4y127p6?p=49");
