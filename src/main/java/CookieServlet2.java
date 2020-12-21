@@ -9,7 +9,7 @@ import java.io.IOException;
  * 一个servlet创建Cookie并发送Cookie
  * 发送的时候会传一个响应头set-cookie:你设置的键=值
  * 在另一个servlet在发送响应时，浏览器会自动的将Cookie放在请求头里面，Cookie:你设置的键=值
- * 这是就可以获取到了Cookie了
+ * 这是就可以获取到了Cookie了。
  */
 @WebServlet("/CookieServlet2")
 public class CookieServlet2 extends HttpServlet {
@@ -20,9 +20,9 @@ public class CookieServlet2 extends HttpServlet {
         response.addCookie(cookie);
 
 
-      //一次发送多个Cookie
-      //创建多个Cookie对象，穿过去
-       //Cookie在浏览器中的存活时间
+        //一次发送多个Cookie是可以的
+        //创建多个Cookie对象，穿过去
+        //Cookie在浏览器中的存活时间
         /*
         1 默认值：浏览器关闭再去访问Cookie就没有了
         2 可以通过设置来加长停留时间

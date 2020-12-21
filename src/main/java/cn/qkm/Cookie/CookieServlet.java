@@ -13,6 +13,9 @@ import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 当第一次访问的时候，是欢迎来到没第二次进去的时候就是欢迎回来，加上上次访问的时间
+ */
 @WebServlet("/CookieServlet")
 public class CookieServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
