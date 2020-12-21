@@ -37,9 +37,9 @@ public class DownloadServlet extends HttpServlet {
         int len = 0;
         byte[] bytes = new byte[1024*8];
         //获取文件的mime类型
-       // String mimeType = servletContext.getMimeType(filename);
-        //设置相应头的文件类型
-       // response.setHeader("content-type",mimeType);
+        String mimeType = servletContext.getMimeType(filename);
+        //设置响应头的文件类型
+        response.setHeader("content-type",mimeType);
         //设置是否弹出下载框框的响应头，谷歌是不弹出框框直接下载的
         response.setHeader("content-disposition","attachment;filename="+filename);
        //然后在写到客户端就可以
