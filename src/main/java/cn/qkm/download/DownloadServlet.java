@@ -16,7 +16,7 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 
 /**
- * 下载文件的servlet
+ * 下载文件的servlet，单击图片链接高级的浏览器直接下载，另一些的询问是否下载
  */
 @WebServlet("/downloadServlet")
 public class DownloadServlet extends HttpServlet {

@@ -1,5 +1,5 @@
 /*
-这是一个下载文件时中文名字乱码的情况的一个工具类，但是还有点问题，上面那个包不知道怎莫弄出来，
+这是一个下载文件时中文名字乱码的情况的一个工具类，但是还有点问题，上面那个包不知道怎莫弄出来，有一点问题
 import sun.misc.BASE64Encoder;
 
 import java.io.UnsupportedEncodingException;
