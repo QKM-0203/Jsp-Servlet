@@ -13,7 +13,7 @@ import java.io.IOException;
  一个part对象就是一个区段的信息，一个区段就是from表单里面的一项，part对象里面会有Content-Disposition参数值，所以用它来获取文件名
  在利用part对象的write写进你指定的目录
  */
-@WebServlet("/FiveServlet")
+@WebServlet("/UploadServlet")
 //上传文件的路径，就是你要把这个文件放在哪里，要使用getPart()方法就得添加
 @MultipartConfig(location="/home/qikaimeng")
 public class UploadServlet extends HttpServlet {
