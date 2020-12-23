@@ -15,9 +15,10 @@ import java.io.IOException;
 public class SessionServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //创建Session对象
+        //创建Session对象,可以设置多个键值
         HttpSession session = request.getSession();
         session.setAttribute("qkm","sjb");
+        session.setAttribute("sc","sb");
         Cookie cookie = new Cookie("JSESSIONID",session.getId());
         cookie.setMaxAge(60*60);
         response.addCookie(cookie);

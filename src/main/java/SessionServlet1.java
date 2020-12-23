@@ -16,6 +16,8 @@ public class SessionServlet1 extends HttpServlet {
         HttpSession session = request.getSession();
         //获取Session中存的数据
         Object qkm = session.getAttribute("qkm");
+        Object sc = session.getAttribute("sc");
+        response.getWriter().println(sc);
         response.getWriter().println(qkm);
     }
 
