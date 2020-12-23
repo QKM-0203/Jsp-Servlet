@@ -11,7 +11,7 @@ import java.io.IOException;
  * 如果想让Session在不同的会话中获取的是同一个，可以使用Cookie来设置Cookie的存活时间长一点就可以,如下代码
  * 当服务器关了之后，Session存的东西就没了
  */
-@WebServlet("/sessionServlet")
+@WebServlet("/sessionServlet2")
 public class SessionServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
