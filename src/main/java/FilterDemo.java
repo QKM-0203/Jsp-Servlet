@@ -32,7 +32,7 @@ public class FilterDemo implements Filter {
         //增强请求
         //设计模式来增强
         /*
-        dongdaidaili
+
          */
         chain.doFilter(request, response);
         //执行完过滤器的同意放行之后再去执行访问的资源，执行完后来执行底下的代码
