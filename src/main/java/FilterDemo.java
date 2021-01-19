@@ -18,7 +18,7 @@ import java.io.IOException;
  *
  * 过滤器链:就是设置多个过滤器时，会有优先顺序，按照类名的字典顺序比较，先执行谁，回来是反着的
  */
-@WebFilter(value = "/*",dispatcherTypes = {DispatcherType.FORWARD,DispatcherType.REQUEST})//所有请求和转发的资源都得被过滤器
+@WebFilter(value = "*.jsp",dispatcherTypes = {DispatcherType.FORWARD,DispatcherType.REQUEST})//所有请求和转发的资源都得被过滤器
 // 过滤一下，后面那个是拦截方式，默认为request是请求拦截，forward是转发拦截，可以同时设置多个属性，就是该类型的资源在该访问方式下要被过滤器过滤
 public class FilterDemo implements Filter {
     @Override

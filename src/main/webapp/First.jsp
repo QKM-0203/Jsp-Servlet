@@ -16,7 +16,7 @@
   <%
     User user = new User();
     user.setAge(18);
-    user.setName("qkm");
+    user.setName("戚凯萌");
     User user1 = new User();
     user1.setAge(19);
     user1.setName("sc");
@@ -32,7 +32,9 @@
 
   %>
   <%--获取属性,得有get方法--%>
-    ${requestScope.user.age}
+  <form action = "/WebServlet15_war_exploded/ServletCharacterText" method = "post" >
+      用户名：<input type = "text"  name = "User"/> <br>
+      <input type = "submit" value = "提交" name = "upload">
 
   <%--jstl标签写java代码--%>
   <%--if语句--%>
