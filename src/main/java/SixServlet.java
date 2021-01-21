@@ -12,6 +12,11 @@ import java.nio.charset.StandardCharsets;
 
 @WebServlet("/SixServlet")
 public class SixServlet extends HttpServlet {
+    //生成一个servletConfig传入该参数调用init(servletConfig),然后调用init()调用无参数的方法。
+    @Override
+    public void init(){
+        System.out.println("1");
+    }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /*
         重定向：发生在想响应的时候

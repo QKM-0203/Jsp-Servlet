@@ -31,7 +31,7 @@
 
 
   %>
-  <%--获取属性,得有get方法--%>
+
   <form action = "/WebServlet15_war_exploded/ServletCharacterText" method = "post" >
       用户名：<input type = "text"  name = "User"/> <br>
       <input type = "submit" value = "提交" name = "upload">
