@@ -1,6 +1,9 @@
 package com.qkm.DAO;
 
+import cn.qkm.Login.User;
+import com.qkm.user.Boss;
 import com.qkm.user.user;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -14,4 +17,6 @@ public class UserQueueImp implements UserQueue{
         List<user> query = jdbcTemplate.query(sql, new BeanPropertyRowMapper<user>(user.class));
         return query;
     }
+
+
 }

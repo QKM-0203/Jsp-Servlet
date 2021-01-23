@@ -15,10 +15,10 @@
 <h1 style="text-align: center">登录界面</h1>
     <form action = "${pageContext.request.contextPath}/LoginServlet" method = "post" >
 
-        <div style="text-align: center">用户名<br><input type = "text"  name = "User"/> </div>
+        <div style="text-align: center">用户名<br><input type = "text"  name = "boss"/> </div>
 
 
-        <div style="text-align: center">密码<br><input type ="password" name = "Password"><br></div>
+        <div style="text-align: center">密码<br><input type ="password" name = "password"><br></div>
 
         <div style="text-align: center"><br>请输入验证码：<input type ="text"  name = "checkBoard" style="width: 50px ;height: 25px">
           <a href="javascript:refreshCode();">

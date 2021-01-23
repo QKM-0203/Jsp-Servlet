@@ -1,0 +1,58 @@
+package com.qkm.Servlet;
+
+import cn.qkm.Login.SQlQueryUser;
+import cn.qkm.Login.User;
+import com.qkm.DAO.bossQueueImp;
+import com.qkm.user.Boss;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+
+/**
+ * 登录获取请求参数，然后从数据库验证密码是否正确，利用druid和jdbcTemplate来判断
+ * 密码正确登录成功
+ * 错误登录失败
+ *是一些简单的主要是将最近学得连接起来
+ */
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        //首先判断验证码是否正确
+        String checkBoard = request.getParameter("checkBoard");
+
+        HttpSession session = request.getSession();
+        if(session.getAttribute("checkBoard").equals(checkBoard)){
+            String user = request.getParameter("boss");
+            session.removeAttribute("checkBoard");
+            Boss boss = new Boss();
+            boss.setName(user);
+            String password = request.getParameter("password");
+            boss.setPassword(password);
+            bossQueueImp bossQueueImp = new bossQueueImp();
+            if(bossQueueImp.findUser(boss) != null){
+                request.getSession().setAttribute("boss",boss);
+                response.sendRedirect(request.getContextPath()+"/Case/index.jsp");
+            } else{
+                response.sendRedirect(request.getContextPath()+"/Case/Login.jsp");
+            }
+        }else{
+            session.removeAttribute("checkBoard");
+            response.sendRedirect(request.getContextPath()+"/Case/Login.jsp");
+
+        }
+
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+}
+/*正确的
+戚凯萌 -- 12345678qkm,
+ */
