@@ -25,12 +25,11 @@ public class LoginServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         //首先判断验证码是否正确
         String checkBoard = request.getParameter("checkBoard");
-
         HttpSession session = request.getSession();
         if(session.getAttribute("checkBoard").equals(checkBoard)){
-            String user = request.getParameter("boss");
             session.removeAttribute("checkBoard");
             Boss boss = new Boss();
+            String user = request.getParameter("boss");
             boss.setName(user);
             String password = request.getParameter("password");
             boss.setPassword(password);
@@ -39,10 +38,12 @@ public class LoginServlet extends HttpServlet {
                 request.getSession().setAttribute("boss",boss);
                 response.sendRedirect(request.getContextPath()+"/Case/index.jsp");
             } else{
+                session.setAttribute("ku","用户名或密码错误");
                 response.sendRedirect(request.getContextPath()+"/Case/Login.jsp");
             }
         }else{
             session.removeAttribute("checkBoard");
+            session.setAttribute("ku","验证码错误");
             response.sendRedirect(request.getContextPath()+"/Case/Login.jsp");
 
         }

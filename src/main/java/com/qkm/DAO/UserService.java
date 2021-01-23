@@ -4,7 +4,7 @@ import com.qkm.user.*;
 
 import java.util.List;
 
-public interface UserQueue {
+public interface UserService {
     public List<user> findAll();
-
+    public void addUser(user User);
 }

@@ -59,7 +59,7 @@
           <th>qq</th>
           <th>mail</th>
       </tr>
-      <c1:forEach varStatus="s" var="user" items="${user}">
+      <c1:forEach varStatus="s" var="user" items="${sessionScope.user}">
           <tr>
               <th><input type="checkbox"></th>
               <td>${user.id}</td>
