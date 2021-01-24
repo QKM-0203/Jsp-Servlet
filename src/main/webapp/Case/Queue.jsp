@@ -27,6 +27,14 @@
             height:35px;
         }
     </style>
+    <script>
+        function deleteUser(id){
+            if(confirm("你确定删除吗？")){
+                Location.href="${pageContext.request.contextPath}/deleteUserServlet?id="+id;
+            }
+
+        }
+    </script>
 </head>
 
 <body>
@@ -44,8 +52,8 @@
     </form>
 </div>
 <div style="float:right; margin: 5px" >
-    <button class="btn btn-primary" href="">添加联系人</button>
-    <button class="btn btn-primary" href="">删除选中</button>
+    <a class="btn btn-primary" href="${pageContext.request.contextPath}/Case/addUser.jsp">添加联系人</a>
+    <a class="btn btn-primary" href="">删除选中</a>
 </div>
 <div >
   <table align="center" border="2">
@@ -58,6 +66,7 @@
           <th>籍贯</th>
           <th>qq</th>
           <th>mail</th>
+          <th>操作</th>
       </tr>
       <c1:forEach varStatus="s" var="user" items="${sessionScope.user}">
           <tr>
@@ -69,6 +78,8 @@
              <td>${user.birth}</td>
              <td>${user.qq}</td>
              <td>${user.mail}</td>
+             <td>&nbsp;<a class="btn btn-default btn-sm" href="">修改</a>&nbsp;
+                 <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id});">删除</a></td>
           </tr>
       </c1:forEach>
   </table>

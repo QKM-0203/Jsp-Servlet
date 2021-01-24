@@ -24,5 +24,11 @@ public class UserServiceImp implements UserService{
        jdbcTemplate.update(sql,User.getName(),User.getSex(),User.getAge(),User.getBirth(),User.getQq(),User.getMail());
     }
 
+    @Override
+    public void deleteUser(String id) {
+         String sql = "delete from user where ID = ?";
+         jdbcTemplate.update(sql,Integer.parseInt(id));
+    }
+
 
 }

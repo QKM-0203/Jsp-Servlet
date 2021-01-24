@@ -29,7 +29,6 @@ public class addUserServlet extends HttpServlet {
         user.setName(name);
         user.setQq(qq);
         user.setSex(sex);
-        request.setAttribute("user",user);
         UserServiceImp userServiceImp = new UserServiceImp();
         userServiceImp.addUser(user);
         response.sendRedirect(request.getContextPath()+"/userServlet");

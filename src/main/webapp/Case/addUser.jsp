@@ -11,9 +11,9 @@
     <title>添加联系人</title>
 </head>
 <body>
-    <div class="content" >
+<div class="content" >
     <center><h3>添加联系人</h3></center>
-<from action="${pageContext.request.contextPath}/add" method="post">
+<form action="${pageContext.request.contextPath}/addUserServlet" method="post">
     <div class="form-group">
         <label for="name">姓名：</label>
         <input type="text" class="form-control" id="name" name= "name" placeholder="请输入姓名">
@@ -44,11 +44,11 @@
     </div>
     <div class="form-group">
     <label for="name">qq：</label>
-    <input type="text" class="form-control" id="qq"name="qq" placeholder="请输入qq号码">
+    <input type="text" class="form-control" id="qq" name="qq" placeholder="请输入qq号码">
     </div>
     <div class="form-group">
     <label for="name">mail：</label>
-    <input type="text" class="form-control" id="mail" name="mail" placeholder="请输入姓名">
+    <input type="text" class="form-control" id="mail" name="mail" placeholder="请输入mail">
     </div>
 
     <div class="form-group ">
@@ -56,7 +56,7 @@
         <input class="btn btn-default" type="reset" value="重置"/>
         <input class="btn btn-default" type="button" value="返回"/>
     </div>
-   </from>
-    </div>
+   </form>
+</div>
 </body>
 </html>
