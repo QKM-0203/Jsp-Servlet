@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
             String password = request.getParameter("password");
             boss.setPassword(password);
             bossQueueImp bossQueueImp = new bossQueueImp();
-            if(bossQueueImp.findUser(boss) != null){
+            if(bossQueueImp.findBoss(boss) != null){
                 request.getSession().setAttribute("boss",boss);
                 response.sendRedirect(request.getContextPath()+"/Case/index.jsp");
             } else{

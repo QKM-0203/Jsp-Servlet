@@ -30,5 +30,26 @@ public class UserServiceImp implements UserService{
          jdbcTemplate.update(sql,Integer.parseInt(id));
     }
 
+    @Override
+    public void updateUser(user User) {
+        String sql = "update user set NAME = ? and SEX = ? AND AGE = ?  AND BIRTH = ? AND QQ = ? AND MAIL = ? WHERE ID = ?";
+        jdbcTemplate.update(sql,User.getName(),User.getSex(),User.getAge(),User.getBirth(),User.getQq(),User.getMail(),User.getId());
+
+    }
+    @Override
+    public user findUser(String id) {
+        try{
+            String sql = "select * from user where ID = ?";
+            //没有找到对应的名字的密码就会抛出异常，不会返回空，所以利用异常来返回一个空
+            //查询返回一个User对象
+            user User = jdbcTemplate.queryForObject(sql,
+                    new BeanPropertyRowMapper<user>(user.class),Integer.parseInt(id));
+            return User;
+        }catch(DataAccessException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 
 }

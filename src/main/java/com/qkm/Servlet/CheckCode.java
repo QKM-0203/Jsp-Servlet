@@ -14,7 +14,7 @@ import java.util.Random;
 @WebServlet("/CheckCode")
 public class CheckCode extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       //生成一张图片
+        //生成一张图片
         BufferedImage bufferedImage = new BufferedImage(50,30,BufferedImage.TYPE_INT_RGB);
 
         //获得画笔对象

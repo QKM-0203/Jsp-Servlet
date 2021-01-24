@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class bossQueueImp  implements bossQueue{
     private JdbcTemplate jdbcTemplate = new JdbcTemplate(druidJDBCUtils.getDataSource());
         @Override
-        public Boss findUser(Boss boss) {
+        public Boss findBoss(Boss boss) {
             try{
                 String sql = "select * from boss where name = ? and password = ?";
                 //没有找到对应的名字的密码就会抛出异常，不会返回空，所以利用异常来返回一个空

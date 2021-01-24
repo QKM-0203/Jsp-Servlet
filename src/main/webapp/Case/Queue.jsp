@@ -27,14 +27,6 @@
             height:35px;
         }
     </style>
-    <script>
-        function deleteUser(id){
-            if(confirm("你确定删除吗？")){
-                Location.href="${pageContext.request.contextPath}/deleteUserServlet?id="+id;
-            }
-
-        }
-    </script>
 </head>
 
 <body>
@@ -68,7 +60,7 @@
           <th>mail</th>
           <th>操作</th>
       </tr>
-      <c1:forEach varStatus="s" var="user" items="${sessionScope.user}">
+      <c1:forEach varStatus="s" var="user" items="${user}">
           <tr>
               <th><input type="checkbox"></th>
               <td>${user.id}</td>
@@ -78,8 +70,9 @@
              <td>${user.birth}</td>
              <td>${user.qq}</td>
              <td>${user.mail}</td>
-             <td>&nbsp;<a class="btn btn-default btn-sm" href="">修改</a>&nbsp;
-                 <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id});">删除</a></td>
+             <td>&nbsp;<a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/findUserServlet?id=${user.id}">修改</a>&nbsp;
+                 <a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/deleteUserServlet?id=${user.id}">删除</a></td>
+              <%--href="javascript:deleteUser(${user.id});--%>
           </tr>
       </c1:forEach>
   </table>
