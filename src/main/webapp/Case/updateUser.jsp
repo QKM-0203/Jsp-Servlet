@@ -15,6 +15,7 @@
 <div class="content" >
     <center><h3>修改联系人</h3></center>
     <form action="${pageContext.request.contextPath}/updateUserServlet" method="post">
+        <input type="hidden" name="id" value="${user.id}"/>
         <div class="form-group">
             <label for="name">姓名：</label>
             <input type="text" class="form-control" id="name" value="${user.name}" name= "name"  readonly="readonly" placeholder="请输入姓名">
@@ -22,14 +23,13 @@
 
         <div class="form-group">
             <label for="name">性别：</label>
-            <c:if test="${user.sex} == '男'">
+            <c:if test="${user.sex == '男'}">
                 <input type="radio" name="sex" value="男" checked="checked"/>男
                 <input type="radio" name="sex" value="女" />女
             </c:if>
-            <c:if test="${user.sex} == '女'">
+            <c:if test="${user.sex == '女'}">
                 <input type="radio" name="sex" value="男" />男
                 <input type="radio" name="sex" value="女" checked="checked"/>女
-                <input type="hidden" name="id" value="${user.id}"/>
             </c:if>
 
         </div>
@@ -42,26 +42,71 @@
         <div class="form-group">
             <label for="name">籍贯：</label>
             <select name="birth" class="form-control" id="address">
-                <c:if test="${user.birth} == '山西' ">
-                    <option value="山西" selected >山西</option>
+                <c:if test="${user.birth == '山西'}">
+                    <option value="山西" selected="selected" >山西</option>
+                    <option value="陕西"  >陕西</option>
+                    <option value="新疆"  >新疆</option>
+                    <option value="湖南"  >湖南</option>
+                    <option value="河北"  >河北</option>
+                    <option value="广东" >广东</option>
+                    <option value="安徽"  >安徽</option>
                 </c:if>
-                <c:if test="${user.birth} == '陕西' ">
-                    <option value="陕西" selected >陕西</option>
+                <c:if test="${user.birth == '陕西'}">
+                    <option value="山西" >山西</option>
+                    <option value="陕西" selected="selected" >陕西</option>
+                    <option value="新疆"  >新疆</option>
+                    <option value="湖南" >湖南</option>
+                    <option value="河北" >河北</option>
+                    <option value="广东"  >广东</option>
+                    <option value="安徽"  >安徽</option>
+
                 </c:if>
-                <c:if test="${user.birth} == '新疆' ">
-                    <option value="新疆" selected >新疆</option>
+                <c:if test="${user.birth == '新疆'}">
+                    <option value="山西"  >山西</option>
+                    <option value="陕西"  >陕西</option>
+                    <option value="新疆" selected="selected" >新疆</option>
+                    <option value="湖南"  >湖南</option>
+                    <option value="河北"  >河北</option>
+                    <option value="广东"  >广东</option>
+                    <option value="安徽"  >安徽</option>
                 </c:if>
-                <c:if test="${user.birth} == '湖南' ">
-                     <option value="湖南" selected >湖南</option>
+                <c:if test="${user.birth == '湖南'}">
+                    <option value="山西"  >山西</option>
+                    <option value="陕西"  >陕西</option>
+                    <option value="新疆"  >新疆</option>
+                    <option value="湖南" selected="selected" >湖南</option>
+                    <option value="河北"  >河北</option>
+                    <option value="广东"  >广东</option>
+                    <option value="安徽"  >安徽</option>
+
                 </c:if>
-                <c:if test="${user.birth} == '河北' ">
-                    <option value="河北" selected >河北</option>
+                <c:if test="${user.birth == '河北'}">
+                    <option value="山西"  >山西</option>
+                    <option value="陕西"  >陕西</option>
+                    <option value="新疆"  >新疆</option>
+                    <option value="湖南"  >湖南</option>
+                    <option value="河北" selected="selected">河北</option>
+                    <option value="广东"  >广东</option>
+                    <option value="安徽"  >安徽</option>
                 </c:if>
-                <c:if test="${user.birth} == '广东' ">
-                   <option value="广东" selected >广东</option>
+                <c:if test="${user.birth == '广东'}">
+                    <option value="山西"  >山西</option>
+                    <option value="陕西"  >陕西</option>
+                    <option value="新疆"  >新疆</option>
+                    <option value="湖南"  >湖南</option>
+                    <option value="河北"  >河北</option>
+                    <option value="广东" selected="selected" >广东</option>
+                    <option value="安徽"  >安徽</option>
+
                  </c:if>
-                <c:if test="${user.birth} == '安徽' ">
-                    <option value="安徽" selected >安徽</option>
+                <c:if test="${user.birth == '安徽'} ">
+                    <option value="山西" >山西</option>
+                    <option value="陕西"  >陕西</option>
+                    <option value="新疆"  >新疆</option>
+                    <option value="湖南"  >湖南</option>
+                    <option value="河北"  >河北</option>
+                    <option value="广东"  >广东</option>
+                    <option value="安徽" selected="selected">安徽</option>
                 </c:if>
             </select>
         </div>

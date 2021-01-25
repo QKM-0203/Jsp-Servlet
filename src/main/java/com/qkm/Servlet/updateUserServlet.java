@@ -15,13 +15,15 @@ import java.util.Map;
 public class updateUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        String qq = request.getParameter("qq");
+        String id = request.getParameter("id");
         String name = request.getParameter("name");
         String age = request.getParameter("age");
+        String qq = request.getParameter("qq");
         String mail = request.getParameter("mail");
         String sex = request.getParameter("sex");
         String birth = request.getParameter("birth");
         user user = new user();
+        user.setId(Integer.parseInt(id));
         user.setMail(mail);
         user.setName(name);
         user.setAge(Integer.parseInt(age));
@@ -31,7 +33,7 @@ public class updateUserServlet extends HttpServlet {
         user.setSex(sex);
         UserServiceImp userServiceImp = new UserServiceImp();
         userServiceImp.updateUser(user);
-        response.sendRedirect(request.getContextPath()+"/Case/Queue.jsp");
+        response.sendRedirect(request.getContextPath()+"/userServlet");
 
     }
 

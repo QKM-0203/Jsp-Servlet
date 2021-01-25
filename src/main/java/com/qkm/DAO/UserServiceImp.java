@@ -32,7 +32,7 @@ public class UserServiceImp implements UserService{
 
     @Override
     public void updateUser(user User) {
-        String sql = "update user set NAME = ? and SEX = ? AND AGE = ?  AND BIRTH = ? AND QQ = ? AND MAIL = ? WHERE ID = ?";
+        String sql = "update user set NAME = ?,SEX = ?,AGE = ?,BIRTH = ?,QQ = ?,MAIL = ? where ID = ?";
         jdbcTemplate.update(sql,User.getName(),User.getSex(),User.getAge(),User.getBirth(),User.getQq(),User.getMail(),User.getId());
 
     }

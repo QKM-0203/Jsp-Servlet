@@ -5,7 +5,7 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter("/*")
+@WebFilter("*.jsp")
 public class filterCharacter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }
