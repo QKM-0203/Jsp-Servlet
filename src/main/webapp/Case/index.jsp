@@ -12,6 +12,6 @@
 </head>
 <body>
 
-    <a href="${pageContext.request.contextPath}/userServlet">查询用户信息</a>
+    <a href="${pageContext.request.contextPath}/pageServlet">查询用户信息</a>
 </body>
 </html>
