@@ -26,6 +26,9 @@ public class LoginServlet extends HttpServlet {
         //首先判断验证码是否正确
         String checkBoard = request.getParameter("checkBoard");
         HttpSession session = request.getSession();
+        if(checkBoard == null){
+            response.sendRedirect("/Case/home.jsp");
+        }
         if(session.getAttribute("checkBoard").equals(checkBoard)){
             session.removeAttribute("checkBoard");
             Boss boss = new Boss();
@@ -39,12 +42,12 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath()+"/Case/index.jsp");
             } else{
                 session.setAttribute("ku","用户名或密码错误");
-                response.sendRedirect(request.getContextPath()+"/Case/Login.jsp");
+                response.sendRedirect(request.getContextPath()+"/Case/home.jsp");
             }
         }else{
             session.removeAttribute("checkBoard");
             session.setAttribute("ku","验证码错误");
-            response.sendRedirect(request.getContextPath()+"/Case/Login.jsp");
+            response.sendRedirect(request.getContextPath()+"/Case/home.jsp");
 
         }
 
