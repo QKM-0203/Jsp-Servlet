@@ -18,7 +18,6 @@
         }
         html,body{
             height:100%;
-            background-image: url("b.jpg");
             background-repeat: no-repeat;
             background-size: 100% 100%;
             font-size: 12px;
@@ -34,7 +33,7 @@
             width: 500px;
             height: 150px;
             margin: 0 auto;
-            background: url("a.png") center no-repeat;
+            background: center no-repeat;
         }
         .login-box{
 
@@ -56,7 +55,7 @@
         }
         .one{
             width: 300px;
-            height: 40px
+            height: 40px;
             border: 1px  #CCCCCC;
             margin: 20px auto 0 auto;
             background: #FFFFFF;
@@ -74,7 +73,7 @@
         input:focus {
             outline: none;
             border:1px solid #cccccc;
-            box-shadow: rgb(187,187,187)0px 0px 3px;;
+            box-shadow: rgb(187,187,187)0px 0px 3px;
         }
         {
             border: none;

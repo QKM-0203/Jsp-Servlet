@@ -18,7 +18,6 @@
         }
         html,body{
             height:100%;
-            background-image: url("b.jpg");
             background-repeat: no-repeat;
             background-size: 100% 100%;
             font-size: 12px;
@@ -34,7 +33,7 @@
             width: 500px;
             height: 150px;
             margin: 0 auto;
-            background: url("a.png") center no-repeat;
+            background: center no-repeat;
         }
         .login-box{
 
