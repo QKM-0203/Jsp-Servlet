@@ -6,6 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: qikaimeng
+  Date: 2021/1/26
+  Time: 下午3:49
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,14 +37,14 @@
             padding:0px;
             border: 5px;
             font-size:100%;
-            height: 390px;
+            height: 410px;
             width: 730px;
             border: solid 1px #CCCCCC;
         }
         .pic{
             width: 350px;
             height: 375px;
-            margin: 5px;
+            margin: 14px 5px;
             padding: 0px;
             display: inline-block;
         }
@@ -133,22 +141,7 @@
             font-size: 14px;
             color: #666;
         }
-        .login-others{
-            overflow: hidden;
-            width: 300px;
-            height: 80px;
-            line-height: 80px;
-            margin: 0px auto;
-        }
-        .left-other{
-            font-size: 14px;
-            color: #999;
-            float: left;
-        }
-        .right-other{
-            float: right;
 
-        }
         .warning1 span.active{
             color:red;
         }
@@ -163,59 +156,59 @@
 </head>
 <body>
 <form action = "${pageContext.request.contextPath}/LoginServlet" method = "post" >
-<div class="content">
-    <div class="pic">
-        <img src="pic.jpg" alt="" width="350px" height="375px" >
-    </div>
-    <div class="login-box">
-        <div class="login-form">
-            <div class="login-title">登录</div>
-            <form action="" method="post">
-                <div class="text1" >
-                    <input name="boss" type="text" placeholder="手机号/邮箱" >
-                </div>
-                <div class="warning1">
-                    <span>数据不能为空</span>
-                </div>
-                <div class="text1" >
-                    <input name="password" type="password" placeholder="密码">
-                </div>
-                <div class="warning1"></div>
-                <div class="text2">
-                    <div class="left">
-                        <label><input name type="checkbox">自动登录</label>
+    <div class="content">
+        <div class="pic">
+            <img src="pic.jpg" alt="" width="350px" height="375px" >
+        </div>
+        <div class="login-box">
+            <div class="login-form">
+                <div class="login-title">登录</div>
+                <form action="" method="post">
+                    <div class="text1" >
+                        <input name="boss" type="text" placeholder="手机号/邮箱" >
                     </div>
-                    <div class="right">
-                        <a href="set.jsp">忘记密码</a>
+                    <div class="warning1">
+                        <span>数据不能为空</span>
                     </div>
-                </div>
-                <div style="text-align: center" ><br><input type ="text" placeholder="验证码" name = "checkBoard" style="width: 100px ;height: 30px">
+                    <div class="text1" >
+                        <input name="password" type="password" placeholder="密码">
+                    </div>
+                    <div class="warning1"></div>
+                    <div class="text2">
+                        <div class="left">
+                            <label><input name type="checkbox">自动登录</label>
+                        </div>
+                        <div class="right">
+                            <a href="set.jsp">忘记密码</a>
+                        </div>
+                    </div>
+                    <div style="text-align: center" ><br><input type ="text" placeholder="验证码" name = "checkBoard" style="width: 100px ;height: 30px">
                         <img src="${pageContext.request.contextPath}/CheckCode" title="看不清点击刷新" id="code"/>
-                    <a href="javascript:refreshCode();">看不清?换一张</a>
+                        <a href="javascript:refreshCode();">看不清?换一张</a>
+                    </div>
+                    <div class="btn" >
+                        <button type="submit">登录</button>
+                    </div>
+                    <div class="botm">
+                        <span>还没有账号?</span>
+                        <a href="login.jsp">马上注册</a>
+                    </div>
+                </form>
+                <div class="login-others">
+                    <div class="left-other">
+                        <span></span>
+                    </div>
+                    <!--
+                    <div class="right-other">
+                        <a href="#">QQ登录</a>
+                        <a href="#">微信登录</a>
+                        <a href="#">微博登录</a>
+                    </div>
+                    -->
                 </div>
-                <div class="btn" >
-                    <button type="submit">登录</button>
-                </div>
-                <div class="botm">
-                    <span>还没有账号?</span>
-                    <a href="login.jsp">马上注册</a>
-                </div>
-            </form>
-            <div class="login-others">
-                <div class="left-other">
-                    <span></span>
-                </div>
-                <!--
-                <div class="right-other">
-                    <a href="#">QQ登录</a>
-                    <a href="#">微信登录</a>
-                    <a href="#">微博登录</a>
-                </div>
-                -->
             </div>
         </div>
     </div>
-</div>
 </form>
 </body>
 </html>

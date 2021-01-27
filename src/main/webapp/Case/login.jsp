@@ -144,10 +144,12 @@
             <div class="one">
                 <input type="password" name="password" placeholder="重复密码">
             </div>
+            <!--
             <div class="warning"></div>
             <div class="one">
                 <input type="text" name="word" placeholder="验证码">
             </div>
+            -->
             <div class="warning"></div>
             <div class="submit">
                 <button type="button">注册</button>
