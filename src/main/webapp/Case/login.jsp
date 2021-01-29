@@ -157,8 +157,7 @@
                 <button type="submit">注册</button>
             </div>
             <div style="text-align:center;" >
-            ${sessionScope.ku}
-
+                      ${sessionScope.ku}
             </div>
             <div class="login">
                 <span>已有账号？</span>
