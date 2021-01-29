@@ -2,6 +2,7 @@ package com.qkm.DAO;
 
 import com.qkm.user.Boss;
 
-public interface bossQueue {
+public interface bossService {
     public Boss findBoss(Boss boss);
+    public void addBoss(Boss boss);
 }

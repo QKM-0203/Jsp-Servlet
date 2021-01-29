@@ -5,7 +5,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class bossQueueImp  implements bossQueue{
+public class bossServiceImp implements bossService {
     private JdbcTemplate jdbcTemplate = new JdbcTemplate(druidJDBCUtils.getDataSource());
         @Override
         public Boss findBoss(Boss boss) {
@@ -21,4 +21,12 @@ public class bossQueueImp  implements bossQueue{
                 return null;
             }
         }
-}
+
+
+    @Override
+    public void addBoss(Boss boss) {
+        String sql = "insert into user value(?,?,?)";
+        jdbcTemplate.update(sql,boss.getName(),boss.getPassword(),null);
+    }
+
+

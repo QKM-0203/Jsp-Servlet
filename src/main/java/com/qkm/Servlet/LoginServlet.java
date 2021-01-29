@@ -1,8 +1,6 @@
 package com.qkm.Servlet;
 
-import cn.qkm.Login.SQlQueryUser;
-import cn.qkm.Login.User;
-import com.qkm.DAO.bossQueueImp;
+import com.qkm.DAO.bossServiceImp;
 import com.qkm.user.Boss;
 
 import javax.servlet.ServletException;
@@ -36,8 +34,8 @@ public class LoginServlet extends HttpServlet {
             boss.setName(user);
             String password = request.getParameter("password");
             boss.setPassword(password);
-            bossQueueImp bossQueueImp = new bossQueueImp();
-            if(bossQueueImp.findBoss(boss) != null){
+            bossServiceImp bossServiceImp = new bossServiceImp();
+            if(bossServiceImp.findBoss(boss) != null){
                 request.getSession().setAttribute("boss",boss);
                 response.sendRedirect(request.getContextPath()+"/Case/index.jsp");
             } else{

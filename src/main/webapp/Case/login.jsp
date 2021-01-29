@@ -128,6 +128,7 @@
     </style>
 </head>
 <body>
+<form action = "${pageContext.request.contextPath}/addBossServlet" method = "post" >
 <div class="logo"></div>
 <div class="content" >
     <div class="login-box">
@@ -142,7 +143,7 @@
             </div>
             <div class="warning"></div>
             <div class="one">
-                <input type="password" name="password" placeholder="重复密码">
+                <input type="password" name="password1" placeholder="重复密码">
             </div>
             <!--
             <div class="warning"></div>
@@ -150,9 +151,14 @@
                 <input type="text" name="word" placeholder="验证码">
             </div>
             -->
+
             <div class="warning"></div>
             <div class="submit">
-                <button type="button">注册</button>
+                <button type="submit">注册</button>
+            </div>
+            <div style="text-align:center;" >
+            ${sessionScope.ku}
+
             </div>
             <div class="login">
                 <span>已有账号？</span>
@@ -171,5 +177,6 @@
         </div>
     </div>
 </div>
+    </form>
 </body>
 </html>
