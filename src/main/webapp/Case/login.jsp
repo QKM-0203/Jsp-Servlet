@@ -157,11 +157,11 @@
                 <button type="submit">注册</button>
             </div>
             <div style="text-align:center;" >
-                      ${sessionScope.ku}
+                      ${requestScope.ku}
             </div>
             <div class="login">
                 <span>已有账号？</span>
-                <a href="home.jsp">马上登录</a>
+                <a href="/Case/home.jsp">马上登录</a>
             </div>
             <!--
             <div class="others">

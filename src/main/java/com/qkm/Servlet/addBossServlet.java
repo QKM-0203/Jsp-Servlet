@@ -12,8 +12,9 @@ import java.io.IOException;
 
 @WebServlet("/addBossServlet")
 public class addBossServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       request.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String password1 = request.getParameter("password1");
@@ -23,11 +24,11 @@ public class addBossServlet extends HttpServlet {
             boss.setPassword(password);
             boss.setName(username);
             bossServiceImp.addBoss(boss);
-            request.getSession().setAttribute("ku","注册成功");
+            request.setAttribute("ku","注册成功");
         }else{
-            request.getSession().setAttribute("ku","两次密码不一致");
+            request.setAttribute("ku","两次密码不一致");
         }
-        response.sendRedirect(request.getContextPath()+"/Case/login.jsp");
+        request.getRequestDispatcher("/Case/login.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

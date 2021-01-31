@@ -176,7 +176,7 @@
                     <div class="warning1"></div>
                     <div class="text2">
                         <div class="left">
-                            <label><input name type="checkbox">自动登录</label>
+                            <label><input name="remember" value="23" type="checkbox" >自动登录</label>
                         </div>
                         <div class="right">
                             <a href="set.jsp">忘记密码</a>

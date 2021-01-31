@@ -5,10 +5,7 @@ import com.qkm.user.Boss;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 /**
@@ -27,6 +24,7 @@ public class LoginServlet extends HttpServlet {
         if(checkBoard == null){
             response.sendRedirect("/Case/home.jsp");
         }
+
         if(session.getAttribute("checkBoard").equals(checkBoard)){
             session.removeAttribute("checkBoard");
             Boss boss = new Boss();
@@ -37,7 +35,13 @@ public class LoginServlet extends HttpServlet {
             bossServiceImp bossServiceImp = new bossServiceImp();
             if(bossServiceImp.findBoss(boss) != null){
                 request.getSession().setAttribute("boss",boss);
-                response.sendRedirect(request.getContextPath()+"/Case/index.jsp");
+                String remember = request.getParameter("remember");
+                if(remember != null){
+                    Cookie cookie = new Cookie("boss","true");
+                    cookie.setMaxAge(60*60*60);
+                    response.addCookie(cookie);
+                }
+               response.sendRedirect(request.getContextPath()+"/Case/index.jsp");
             } else{
                 session.setAttribute("ku","用户名或密码错误");
                 response.sendRedirect(request.getContextPath()+"/Case/home.jsp");

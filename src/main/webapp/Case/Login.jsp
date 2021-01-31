@@ -28,7 +28,7 @@
         <br>
         <div style="text-align: center; "><input  style="text-align: center" type = "submit" value = "登录" name = "upload">
         </div>
-        <div style="text-align:center;" >
+        <div style="text-align:center; font-size: medium" >
             ${sessionScope.ku}
 
         </div>

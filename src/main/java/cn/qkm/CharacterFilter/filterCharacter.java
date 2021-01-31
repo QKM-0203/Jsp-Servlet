@@ -2,6 +2,7 @@ package cn.qkm.CharacterFilter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
@@ -18,6 +19,11 @@ public class filterCharacter implements Filter {
        HttpServletRequest servletCharacterFilterWrapper =
                new servletCharacterFilterWrapper((HttpServletRequest) request);
        chain.doFilter(servletCharacterFilterWrapper, response);
-
+        Cookie[] cookies = ((HttpServletRequest) request).getCookies();
+        for (Cookie cookie : cookies) {
+            if(cookie.getValue().equals("1")){
+                request.getRequestDispatcher("/Case/index.jsp").forward(request,response);
+            }
+        }
     }
 }
