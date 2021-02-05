@@ -165,13 +165,13 @@
                 <div class="login-title">登录</div>
                 <form action="" method="post">
                     <div class="text1" >
-                        <input name="boss" type="text" placeholder="手机号/邮箱" value="${cookie.name}" >
+                        <input name="boss" type="text" placeholder="手机号/邮箱" value="${cookie.name.value}" >
                     </div>
                     <div class="warning1">
                         <span>数据不能为空</span>
                     </div>
                     <div class="text1" >
-                        <input name="password" type="password" placeholder="密码" value="${cookie.password}" >
+                        <input name="password" type="password" placeholder="密码" value="${cookie.password.value}" >
                     </div>
                     <div class="warning1"></div>
                     <div class="text2">
