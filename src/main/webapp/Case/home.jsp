@@ -165,18 +165,18 @@
                 <div class="login-title">登录</div>
                 <form action="" method="post">
                     <div class="text1" >
-                        <input name="boss" type="text" placeholder="手机号/邮箱" >
+                        <input name="boss" type="text" placeholder="手机号/邮箱" value="${cookie.name}" >
                     </div>
                     <div class="warning1">
                         <span>数据不能为空</span>
                     </div>
                     <div class="text1" >
-                        <input name="password" type="password" placeholder="密码">
+                        <input name="password" type="password" placeholder="密码" value="${cookie.password}" >
                     </div>
                     <div class="warning1"></div>
                     <div class="text2">
                         <div class="left">
-                            <label><input name="remember" value="23" type="checkbox" >自动登录</label>
+                            <label><input name="remember" value="23" type="checkbox" checked="checked" >自动登录</label>
                         </div>
                         <div class="right">
                             <a href="set.jsp">忘记密码</a>

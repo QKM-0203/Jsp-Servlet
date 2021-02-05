@@ -24,9 +24,14 @@ public class LoginServlet extends HttpServlet {
         if(checkBoard == null){
             response.sendRedirect("/Case/home.jsp");
         }
-
         if(session.getAttribute("checkBoard").equals(checkBoard)){
             session.removeAttribute("checkBoard");
+            Cookie[] cookies = request.getCookies();
+            for (Cookie cookie : cookies) {
+                if(cookie.getName().equals("name")){
+                    response.sendRedirect(request.getContextPath()+"/Case/index.jsp");
+                }
+            }
             Boss boss = new Boss();
             String user = request.getParameter("boss");
             boss.setName(user);
@@ -37,9 +42,12 @@ public class LoginServlet extends HttpServlet {
                 request.getSession().setAttribute("boss",boss);
                 String remember = request.getParameter("remember");
                 if(remember != null){
-                    Cookie cookie = new Cookie("boss","true");
-                    cookie.setMaxAge(60*60*60);
+                    Cookie cookie = new Cookie("name",boss.getName());
+                    Cookie password1 = new Cookie("password", boss.getPassword());
+                    cookie.setMaxAge(60);
+                    password1.setMaxAge(60);
                     response.addCookie(cookie);
+                    response.addCookie(password1);
                 }
                response.sendRedirect(request.getContextPath()+"/Case/index.jsp");
             } else{
