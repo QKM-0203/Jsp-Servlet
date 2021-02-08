@@ -39,7 +39,6 @@ public class LoginServlet extends HttpServlet {
             boss.setPassword(password);
             bossServiceImp bossServiceImp = new bossServiceImp();
             if(bossServiceImp.findBoss(boss) != null){
-                request.getSession().setAttribute("boss",boss);
                 String remember = request.getParameter("remember");
                 if(remember != null){
                     Cookie cookie = new Cookie("name",boss.getName());

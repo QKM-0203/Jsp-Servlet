@@ -31,4 +31,19 @@ public class bossServiceImp implements bossService {
     }
 }
 
+/*
+s=a;
+if(a->data==b->data){
+     if(a==S){
+        a=a->next;
+        S=a;
+     }else{
+        d=a->next;
+        a->next=d->next;
+        free(d);
+     }
+}
+
+ */
+
 
