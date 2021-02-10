@@ -1,8 +1,7 @@
 package com.qkm.Servlet;
 
-import com.qkm.DAO.UserServiceImp;
+import com.qkm.Service.UserServiceImp;
 import com.qkm.user.user;
-import org.springframework.beans.BeanUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Map;
 
 @WebServlet("/addUserServlet")
 public class addUserServlet extends HttpServlet {

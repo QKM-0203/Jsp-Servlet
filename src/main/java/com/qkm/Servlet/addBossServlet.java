@@ -1,6 +1,6 @@
 package com.qkm.Servlet;
 
-import com.qkm.DAO.bossServiceImp;
+import com.qkm.Service.bossServiceImp;
 import com.qkm.user.Boss;
 
 import javax.servlet.ServletException;

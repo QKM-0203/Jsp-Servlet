@@ -1,6 +1,6 @@
 package com.qkm.Servlet;
 
-import com.qkm.DAO.UserServiceImp;
+import com.qkm.Service.UserServiceImp;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

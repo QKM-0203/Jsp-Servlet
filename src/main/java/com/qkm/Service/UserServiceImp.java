@@ -1,7 +1,7 @@
-package com.qkm.DAO;
+package com.qkm.Service;
 
-import cn.qkm.Login.User;
-import com.qkm.user.Boss;
+import com.qkm.DAO.druidJDBCUtils;
+import com.qkm.Service.UserService;
 import com.qkm.user.PageBean;
 import com.qkm.user.user;
 import org.springframework.dao.DataAccessException;
@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 
-public class UserServiceImp implements UserService{
+public class UserServiceImp implements UserService {
     private JdbcTemplate jdbcTemplate = new JdbcTemplate(druidJDBCUtils.getDataSource());
     @Override
     public List<user> findAll() {

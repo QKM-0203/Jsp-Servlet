@@ -20,6 +20,79 @@
     <meta charset="utf-8">
     <title></title>
     <style type="text/css">
+
+        /* 背景圆样式 */
+
+        .box .circle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            /* backdrop-filter属性为一个元素后面区域添加模糊效果 */
+            backdrop-filter: blur(5px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            /* 使用filter(滤镜) 属性，改变颜色。
+            hue-rotate(deg)  给图像应用色相旋转
+            calc() 函数用于动态计算长度值
+            var() 函数调用自定义的CSS属性值x*/
+            filter: hue-rotate(calc(var(--x) * 70deg));
+            /* 调用动画animate，需要10s完成动画，
+            linear表示动画从头到尾的速度是相同的，
+            infinite指定动画应该循环播放无限次*/
+            animation: animate 10s linear infinite;
+            /* 动态计算动画延迟几秒播放 */
+            animation-delay: calc(var(--x) * -1s);
+        }
+
+        /* 背景圆动画 */
+
+        @keyframes animate {
+            0%,100%{
+                transform: translateY(-50px);
+            }
+            50% {
+                transform: translateY(50px);
+            }
+        }
+
+        .box .circle:nth-child(1) {
+            top: -50px;
+            right: -60px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .box .circle:nth-child(2) {
+            top: 150px;
+            left: -100px;
+            width: 120px;
+            height: 120px;
+            z-index: 2;
+        }
+
+        .box .circle:nth-child(3) {
+            bottom: 50px;
+            right: -60px;
+            width: 80px;
+            height: 80px;
+            z-index: 2;
+        }
+
+        .box .circle:nth-child(4) {
+            bottom: -80px;
+            left: 100px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .box .circle:nth-child(5) {
+            top: -80px;
+            left: 140px;
+            width: 60px;
+            height: 60px;
+        }
         html,body{
             height:100%;
             color:rgb(51,51,51);
@@ -146,6 +219,7 @@
             color:red;
         }
     </style>
+
     <script type="text/javascript">
         //切换验证码
         function refreshCode(){
@@ -156,10 +230,23 @@
 </head>
 <body>
 <form action = "${pageContext.request.contextPath}/LoginServlet" method = "post" >
+
     <div class="content">
+        <!-- 背景颜色 -->
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <!-- 背景圆 -->
+            <div class="circle" style="--x:0"></div>
+            <div class="circle" style="--x:1"></div>
+            <div class="circle" style="--x:2"></div>
+            <div class="circle" style="--x:3"></div>
+            <div class="circle" style="--x:4"></div>
         <div class="pic">
             <img src="pic.jpg" alt="" width="350px" height="375px" >
         </div>
+
         <div class="login-box">
             <div class="login-form">
                 <div class="login-title">登录</div>
@@ -198,6 +285,9 @@
                     <div class="left-other">
                         <span></span>
                     </div>
+                    <div style="text-align:center; font-size: medium" >
+                        ${sessionScope.ku}
+                    </div>
                     <!--
                     <div class="right-other">
                         <a href="#">QQ登录</a>
@@ -209,6 +299,7 @@
             </div>
         </div>
     </div>
+
 </form>
 </body>
 </html>

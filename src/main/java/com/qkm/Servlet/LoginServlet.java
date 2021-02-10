@@ -1,6 +1,6 @@
 package com.qkm.Servlet;
 
-import com.qkm.DAO.bossServiceImp;
+import com.qkm.Service.bossServiceImp;
 import com.qkm.user.Boss;
 
 import javax.servlet.ServletException;
@@ -19,26 +19,34 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         //首先判断验证码是否正确
-        String checkBoard = request.getParameter("checkBoard");
         HttpSession session = request.getSession();
+        session.removeAttribute("ku");
+        String checkBoard = request.getParameter("checkBoard");
         if(checkBoard == null){
-            response.sendRedirect("/Case/home.jsp");
+            session.setAttribute("ku","请输入验证码");
+            response.sendRedirect(request.getContextPath()+"/Case/home.jsp");
+
         }
         if(session.getAttribute("checkBoard").equals(checkBoard)){
             session.removeAttribute("checkBoard");
             Cookie[] cookies = request.getCookies();
             for (Cookie cookie : cookies) {
                 if(cookie.getName().equals("name")){
-                    response.sendRedirect(request.getContextPath()+"/Case/index.jsp");
+                    request.getRequestDispatcher("/Case/index.jsp").forward(request,response);
                 }
             }
             Boss boss = new Boss();
             String user = request.getParameter("boss");
-            boss.setName(user);
             String password = request.getParameter("password");
+            if(user == null | password == null){
+                session.setAttribute("ku","用户名或密码为空");
+                response.sendRedirect(request.getContextPath()+"/Case/home.jsp");
+            }
+            boss.setName(user);
             boss.setPassword(password);
             bossServiceImp bossServiceImp = new bossServiceImp();
-            if(bossServiceImp.findBoss(boss) != null){
+            Boss boss1 = bossServiceImp.findBoss(boss);
+            if(boss1 != null){
                 String remember = request.getParameter("remember");
                 if(remember != null){
                     Cookie cookie = new Cookie("name",boss.getName());
@@ -52,6 +60,7 @@ public class LoginServlet extends HttpServlet {
             } else{
                 session.setAttribute("ku","用户名或密码错误");
                 response.sendRedirect(request.getContextPath()+"/Case/home.jsp");
+
             }
         }else{
             session.removeAttribute("checkBoard");

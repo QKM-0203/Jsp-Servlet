@@ -6,7 +6,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter("*.jsp")
+@WebFilter("*.html")
 public class filterCharacter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }

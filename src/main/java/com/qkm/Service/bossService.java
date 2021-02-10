@@ -1,4 +1,4 @@
-package com.qkm.DAO;
+package com.qkm.Service;
 
 import com.qkm.user.Boss;
 
