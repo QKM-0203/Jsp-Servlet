@@ -163,16 +163,7 @@
                 <span>已有账号？</span>
                 <a href="home.jsp">马上登录</a>
             </div>
-            <!--
-            <div class="others">
-                <div class="other-left">其他登录方式</div>
-                <div class="other-right">
-                    <a href="#">QQ登录</a>
-                    <a href="#">微信登录</a>
-                    <a href="#">微博登录</a>
-                </div>
-            </div>
-            -->
+
         </div>
     </div>
 </div>
